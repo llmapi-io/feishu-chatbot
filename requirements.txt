@@ -1,0 +1,6 @@
+aiohttp
+fastapi
+llmapi_cli==1.0.7
+pycryptodome
+pydantic
+uvicorn
