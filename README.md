@@ -4,17 +4,17 @@
   <p align="center">私有化部署飞书机器人，和ChatGPT直接聊天</p>
 </p>
 
-# 介绍(Intro)
+## 介绍(Intro)
 与`ChatGPT` `GPT-3` `New-Bing`等流行的大模型聊天，与未来对话。飞书机器人已经准备好了，现在就来享受与AI技术的畅谈吧！
 
-# 安装依赖(Deps)
+## 安装依赖(Deps)
 
 ```bash
 # python 3.6+
 pip install -r requirements.txt
 ```
 
-# 启动服务(Run)
+## 配置服务(Deploy)
 - 在飞书开放平台创建应用，打开```机器人```能力
 <p align="center">
   <img src="imgs/add_bot.png">
@@ -25,7 +25,7 @@ pip install -r requirements.txt
   <img src="imgs/sub.png">
 </p>
 
-- 复制.env.json.example为.env.json，并填写```app_id``` ```app_secret``` ```encryption_key``` ```verification_token```，这几个字段在你的应用详情页可以找到
+- 复制`.env.json.example`为`.env.json`，并填写```app_id``` ```app_secret``` ```encryption_key``` ```verification_token```，这几个字段在你的应用详情页可以找到
 <p align="center">
   <img src="imgs/appid_secret.png">
   <img src="imgs/encrypt_key_verification_token.png">
@@ -44,14 +44,14 @@ python3 start_server.py
   <img src="imgs/configure_url.png">
 </p>
 
-- 如果你使用nginx，则需要把你配置的端口映射到12121端口
-- 如果你不想配置ngix，可以在```start_server.py```中加上```host="0.0.0.0"```参数
+- 如果你使用nginx作为代理，则需要将服务端口映射到本地12121端口
+- 按照如下配置```start_server.py```
 ```python
 config = uvicorn.Config("process:app", port=12121, log_level="info", host="0.0.0.0")
 ```
 - 无论哪种方式，请注意相应的端口号不被防火墙拦截
 
-# 在飞书上体验(Play)
+## 在飞书上体验(Play)
 
 - 在飞书中搜索你创建的机器人
 - 给机器人发送```!help```，查看机器人支持的功能
@@ -65,10 +65,10 @@ config = uvicorn.Config("process:app", port=12121, log_level="info", host="0.0.0
   <img src="imgs/test.png">
 </p>
 
-# 反馈(Feedback)
+## 反馈(Feedback)
 
 请在issue中反馈问题
 
-# 致谢(Acknowledgements)
+## 致谢(Acknowledgements)
 - [ChatGPT](https://chat.openai.com/)
 - [Copilot](https://copilot.github.com/)
